@@ -1,0 +1,13 @@
+
+{
+	"plugins": [ 
+		"transform-class-properties" ,
+		["@babel/plugin-transform-regenerator", {
+			"asyncGenerators": true,
+			"generators": true,
+			"async": true
+		}],
+        "transform-react-jsx-img-import",
+        "react-hot-loader/babel"
+	]
+}
