@@ -13,6 +13,7 @@ import './styles/main.scss';
 // main component
 import App from './components/App.jsx';
 
+// React Hot Loader stuff beyond this point - don't tamper with :))
 const render = Component => {
     ReactDOM.render(
         <AppContainer>
