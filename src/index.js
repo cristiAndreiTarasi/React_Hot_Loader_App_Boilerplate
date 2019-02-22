@@ -13,6 +13,14 @@ import './styles/main.scss';
 // main component
 import App from './components/App.jsx';
 
+// Clears the console after every reload/refresh, 
+// this way solving the HMR overly verbose console output
+window.addEventListener('message', e => {
+    if ('production' !== process.env.NODE_ENV) {
+        console.clear();
+    }
+});
+
 // React Hot Loader stuff beyond this point - don't tamper with :))
 const render = Component => {
     ReactDOM.render(
