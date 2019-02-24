@@ -1,5 +1,7 @@
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -62,7 +64,15 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './public/index.html',
             filename: './index.html'
-        })
+        }),
+        
+        new ErrorOverlayPlugin(),
+        
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3000,
+            proxy: 'http://localhost:8080/',
+        },{ reload: false }),
     ],
 
     devServer: { 
