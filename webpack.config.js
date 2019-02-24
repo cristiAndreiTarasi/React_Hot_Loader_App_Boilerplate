@@ -2,6 +2,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -73,18 +74,21 @@ module.exports = {
             port: 3000,
             proxy: 'http://localhost:8080/',
         },{ reload: false }),
+        
+        new webpack.HotModuleReplacementPlugin(),
     ],
 
     devServer: { 
         stats: {
-            all: false,
-            modules: true,
-            maxModules: 0,
-            errors: true,
-            warnings: true,
-            moduleTrace: true,
-            // errorDetails: true        
+            builtAt: false,
+            children: false,
+            modules: false,
+            colors: true,
+            progress: true,
         },
+        // open: true, // BrowserSync opens the browser tab
+        overlay: true,
+        hotOnly: true,
         historyApiFallback: true,
    }
 }
