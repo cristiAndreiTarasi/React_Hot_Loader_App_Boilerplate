@@ -7,7 +7,6 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 // styles related modules and files
-import 'bootstrap/dist/css/bootstrap.min.scss';
 import './styles/main.scss';
 
 // main component
