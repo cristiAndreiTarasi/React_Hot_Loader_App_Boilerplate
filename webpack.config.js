@@ -32,14 +32,8 @@ module.exports = {
                 use: [{ loader: 'html-loader' }]
             },
             {
-                test: /\.(scss)$/,
-                use: [{
-                    loader: 'style-loader', // inject CSS to page
-                },{
-                    loader: 'css-loader', // translates Css into CommonJS modules
-                },{
-                    loader: 'sass-loader' // compiles Sass to CSS
-                }]
+                test: /\.(css|scss)$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             },
             {
                 test: /\.(jpg|png|gif|svg|pdf|ico)$/,
