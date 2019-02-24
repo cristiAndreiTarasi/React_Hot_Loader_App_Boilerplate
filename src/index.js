@@ -7,19 +7,11 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 // styles related modules and files
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.scss';
 
 // main component
 import App from './components/App.jsx';
-
-// Clears the console after every reload/refresh, 
-// this way solving the HMR overly verbose console output
-window.addEventListener('message', e => {
-    if ('production' !== process.env.NODE_ENV) {
-        console.clear();
-    }
-});
 
 // React Hot Loader stuff beyond this point - don't tamper with :))
 const render = Component => {
@@ -37,3 +29,10 @@ if(module.hot) {
     module.hot.accept('./components/App.jsx', () => { render(App) });
 }
 
+// Clears the console after every reload/refresh, 
+// this way solving the HMR overly verbose console output
+window.addEventListener('message', e => {
+    if ('production' !== process.env.NODE_ENV) {
+        console.clear();
+    }
+});

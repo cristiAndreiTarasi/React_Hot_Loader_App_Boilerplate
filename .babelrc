@@ -9,5 +9,16 @@
 		}],
         "transform-react-jsx-img-import",
         "react-hot-loader/babel"
-	]
+    ],
+    
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "entry"
+            }
+        ],
+
+        "@babel/preset-react"
+    ]
 }
