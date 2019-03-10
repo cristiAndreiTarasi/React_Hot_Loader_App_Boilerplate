@@ -7,27 +7,10 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 // styles related modules and files
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.scss';
 
 // main component
-import App from './components/App.jsx';
-
-// React Hot Loader stuff beyond this point - don't tamper with :))
-const render = Component => {
-    ReactDOM.render(
-        <AppContainer>
-            <Component />
-        </AppContainer>, 
-        document.getElementById('root')
-    );
-}
-
-render(App);
-
-if(module.hot) {
-    module.hot.accept('./components/App.jsx', () => { render(App) });
-}
+import App from './components/App';
 
 // Clears the console after every reload/refresh, 
 // this way solving the HMR overly verbose console output
@@ -36,3 +19,21 @@ window.addEventListener('message', e => {
         console.clear();
     }
 });
+
+// React Hot Loader stuff beyond this point - don't tamper with :))
+const render = Component => {
+    ReactDOM.render(
+        <AppContainer>
+            <Component />
+        </AppContainer>,
+        document.getElementById('root')
+    );
+}
+
+render(App);
+
+if(module.hot) {
+    module.hot.accept('./components/App', () => { render(App) });
+}
+
+

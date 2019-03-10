@@ -12,13 +12,7 @@
     ],
     
     "presets": [
-        [
-            "@babel/preset-env",
-            {
-                "useBuiltIns": "entry"
-            }
-        ],
-
+        "@babel/preset-env",
         "@babel/preset-react"
     ]
 }
