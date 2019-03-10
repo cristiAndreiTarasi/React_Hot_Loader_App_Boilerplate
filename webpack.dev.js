@@ -26,7 +26,7 @@ module.exports = merge(common, {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: './public/index.html',
+            template: './public/template.html',
         }),
         new ErrorOverlayPlugin(),
         new BrowserSyncPlugin({

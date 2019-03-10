@@ -8,4 +8,16 @@ body {
   font-family: "Open Sans", serif;
 }
 
+.jumbotron {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    h1 {
+        text-align: center;
+    }
+}
+
 
